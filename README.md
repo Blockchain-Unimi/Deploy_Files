@@ -7,6 +7,7 @@ In questa repository viene postato tutto l'occorrente per il deploy iniziale da 
 - `Bot_Minter_Data.json`: contiene l'indirizzo del bot minter e il suo mnemonic. Contiene inoltre l'indirizzo del contratto `Paycoin` di cui è Minter. WARNING: OGNUNO DOVRà GIRARE 0.2 ETH A QUESTO ACCOUNT PER TUTTI I DEPLOY E I MINTING
 - `Starting_Pool_Ratios.json`: contiene la quantità iniziale di token e paycoin che andranno mintati alla pool di ciascuno. WARNING: DA AGGIUNGERE INDIRIZZI DI DIANA RICCARDO E FRANCESCO. DA CONCORDARE I RAPPORTI ESATTI.
 - `initial_deploy.py`: script per effettuare il deploy. E' necessario che i due precedenti file si trovino nella stessa cartella di quest'ultimo per il funzionamento.
+- `StartingPoolRatios`
 
 ### Istruzioni:
 
