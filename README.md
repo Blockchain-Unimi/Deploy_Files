@@ -8,8 +8,10 @@ In questa repository viene postato tutto l'occorrente per il deploy iniziale da 
 - `Starting_Pool_Ratios.json`: contiene la quantità iniziale di token e paycoin che andranno mintati alla pool di ciascuno. WARNING: DA AGGIUNGERE INDIRIZZI DI DIANA RICCARDO E FRANCESCO. DA CONCORDARE I RAPPORTI ESATTI.
 - `initial_deploy.py`: script per effettuare il deploy. E' necessario che i due precedenti file si trovino nella stessa cartella di quest'ultimo per il funzionamento.
 - `StartingPoolRatios_to_JSON.py`: script python che serve solamente per creare un JSON con i rapporti iniziali di liquidità che saranno presenti nelle pool di ciasscuno di noi.
+- `addresses.json`: TEMPLATE del file .json che costruiremo una volta effettutato il deploy contenente tutte le informazioni pubbliche degli utenti e del bot minter.
+- `addresses_TO_JSON.py`: prenderà tutti i file `YOURNAME_public_dict.json` che si vengono a creare dopo il deploy di ciascuno e costruisce in automatico il file `addresses.json`
 
-### Istruzioni:
+### Istruzioni `initial_deploy.py`:
 
 - Attendere il deploy iniziale del contratto Paycoin.
 - Mettersi in un progetto brownie contente i contratti `Pool.sol`, `Faucet.sol`, `Token.sol` e con un valido `project_id token` di infura.
