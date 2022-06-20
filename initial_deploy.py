@@ -109,7 +109,7 @@ if __name__=='__main__':
     """
 
     faucet=Faucet.deploy({'from': personal_account})
-    faucet.deposit({'from':personal_account,'value':0.1*10**18})
+    faucet.deposit({'from':personal_account,'value':0.2*10**18})
     print('Faucet balance:', ether(faucet.balance()),' eth')
 
     """
@@ -124,7 +124,9 @@ if __name__=='__main__':
 
             'id': f'{personal_account}',
             'token': f'{token}',
-            'pool':f'{pool}'
+            'pool':f'{pool}',
+            'token name': f'{token_name}',
+            'token symbol': f'{token_symbol}'
         }
 
     }
