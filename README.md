@@ -10,6 +10,7 @@ In questa repository viene postato tutto l'occorrente per il deploy iniziale da 
 - `StartingPoolRatios_to_JSON.py`: script python che serve solamente per creare un JSON con i rapporti iniziali di liquidità che saranno presenti nelle pool di ciasscuno di noi.
 - `addresses.json`: TEMPLATE del file .json che costruiremo una volta effettutato il deploy contenente tutte le informazioni pubbliche degli utenti e del bot minter.
 - `addresses_TO_JSON.py`: prenderà tutti i file `YOURNAME_public_dict.json` che si vengono a creare dopo il deploy di ciascuno e costruisce in automatico il file `addresses.json`
+- `paycoin_deploy.py`: esegue il deploy di un contratto `Paycoin` e di uno `Challenge` di cui `BotMinter` sarà proprietario. Distribuisce inoltre a tutti i giocatori 50k PcN.
 
 ### Istruzioni `initial_deploy.py`:
 
