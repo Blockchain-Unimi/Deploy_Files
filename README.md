@@ -17,7 +17,7 @@ In questa repository viene postato tutto l'occorrente per il deploy iniziale da 
 - Lanciare il programma `initial_deploy.py`: verrà richiesto prima il mnemonic del tuo ACCOUNT PRIVATO, poi quello dell'ACCOUNT DEI BOT.
 - Verrà richiesto un nome per il token, ad esempio "Ragublo" o "CitteCoin" (1 sola parola)
 - Verrà richiesto un simbolo per il token, ad esempio "RgB" o "CtN", come convenzione potremmo tenere 3 lettere di cui solo quella centrale minuscola, le altre maiuscole.
-- Verrà richiesto infine il tuo nome, ad esempio "Matteo" o "Citte".
+- Verrà richiesto infine il tuo nome, ad esempio "Matteo". IMPORTANTE: scrivi il tuo nome (non soprannome) con la maiuscola. Servirà poi in un secondo script.
 - In output riceverai due file. Il primo, `YOURNAME_public_dict.json` contiene il tuo indirizzo, l'indirizzo della tua pool e quello del tuo token. Devi uploadarlo in questa cartella e servirà per costruire il file totale con tutti gli indirizzi. Non modificarlo.
 - Il secondo file, `private_dict.json` è PRIVATO, NON CONDIVIDERLO CON NESSUNO. Contiene il tuo indizzo personale e chiave privata (in termini di mnemonic), l'indirizzo del faucet di cui sei propiretario e che servirà per ricaricare in automatico i bot che fanno le transazioni,  l'indirizzo del
 primo dei tuoi bot e la relativa chiave privata (in termini di mnemonic). Questo conservalo e copialo nelle cartello dove sono presenti script il cui funzionamento necessita di questo file (come, ad esempio, `running_bots.py`).
