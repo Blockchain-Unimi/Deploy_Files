@@ -154,7 +154,7 @@ if __name__=='__main__':
         },
 
         'bots_account':{
-            'id': f'{bots}',
+            'id': f'{bots[0]}',
             'mnemonic': f'{BAmnemonic}'
         }
     }
