@@ -16,7 +16,7 @@ from telegram import Bot
 from termcolor import colored
 
 from tblib import ether
-from tblib import establish_connection, ATM, run_noise_bots, pools_config
+from tblib import establish_connection, mint_paycoin_to_bots
 
 """
 Questo programma esegue il deploy di un token e di una pool e stampa due file json: un file privato `private_dict.json`
@@ -61,7 +61,8 @@ if __name__=='__main__':
 
     PAmnemonic=input('Please enter your PRIVATE ACCOUNT mnemonic: ')
     BAmnemonic=input('Please enter your BOTS ACCOUNT mnemonic: ')
-    bots=accounts.from_mnemonic(BAmnemonic,count=1)
+    print('Loading 100 bots, this could take a while...')
+    bots=accounts.from_mnemonic(BAmnemonic,count=100)
     
     try:    
         Paycoin_addr=BotMinterData['bot_minter']['paycoin']
@@ -113,6 +114,12 @@ if __name__=='__main__':
     faucet=Faucet.deploy({'from': personal_account})
     faucet.deposit({'from':personal_account,'value':0.2*10**18})
     print('Faucet balance:', ether(faucet.balance()),' eth')
+
+    """
+    Minto ai bot il loro saldo di Paycoin. Da questo momento in poi non verranno più ricaricati di paycoin ma solo di eth
+    """
+
+    mint_paycoin_to_bots(bots,Paycoin,bot_minter)
 
     """
     Stampo ora due file .json 
