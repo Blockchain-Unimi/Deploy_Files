@@ -61,6 +61,8 @@ paycoin.mint(fra_wallet, 50000*(10**paycoin.decimals()), {'from':paycoin_admin})
 
 challenge = Challenge.deploy(paycoin.address, [becca_wallet, citte_wallet, pacio_wallet, diana_wallet, fra_wallet], {'from':paycoin_admin})
 
+#totalChallengePaycoins = 3300000 *(10**paycoin.decimals()) #minimum is 3150000
+#paycoin.mint(Challenge.address, totalChallengePaycoins, {'from':paycoin_admin})
 
 abi_and_address (paycoin.abi,paycoin.address, "paycoin")
 abi_and_address (challenge.abi, challenge.address, "challenge")
