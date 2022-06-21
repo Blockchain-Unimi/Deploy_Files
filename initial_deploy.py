@@ -96,10 +96,12 @@ if __name__=='__main__':
     pool=Pool.deploy(token,Paycoin,{'from':personal_account})
 
     """
-    Minto alla pool una certa quantità di PcN e TkNs a seconda di quanto stabilito inizialmente
+    Minto alla pool una certa quantità di PcN e TkNs a seconda di quanto stabilito inizialmente.
+    Minto anche all'utente il 5% della liquidità iniziale della pool
     """
         
-    token.mint(pool,StartingRatios['token'][f'{personal_account}']*10**18,{'from':personal_account})         
+    token.mint(pool,StartingRatios['token'][f'{personal_account}']*10**18,{'from':personal_account})
+    token.mint(personal_account,0.05*StartingRatios['token'][f'{personal_account}']*10**18,{'from':personal_account})       
     Paycoin.mint(pool,StartingRatios['paycoin'][f'{personal_account}']*10**18, {'from':bot_minter})
     pool.pool_Set({'from':personal_account})
 
