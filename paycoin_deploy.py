@@ -40,7 +40,6 @@ from brownie.project.firstproject import  Token, Challenge
 BotMinterData=json.loads(open('Bot_Minter_Data.json').read())
 
 network.connect('ropsten')
-#network.connect('development')
 
 paycoin_admin = accounts.from_mnemonic(BotMinterData['bot_minter']['mnemonic'])
 
@@ -52,15 +51,15 @@ fra_wallet = '0x66F26b71404A133F4e478Fb5f52a8105fB324F6e'
 
 paycoin = paycoin_admin.deploy(Token, "Paycoins", "PcN", 18)
 
-paycoin.mint(becca_wallet, 50000*(10**paycoin.decimals()), {'from':paycoin_admin})
-paycoin.mint(citte_wallet, 50000*(10**paycoin.decimals()), {'from':paycoin_admin})
-paycoin.mint(pacio_wallet, 50000*(10**paycoin.decimals()), {'from':paycoin_admin})
-paycoin.mint(diana_wallet, 50000*(10**paycoin.decimals()), {'from':paycoin_admin})
-paycoin.mint(fra_wallet, 50000*(10**paycoin.decimals()), {'from':paycoin_admin})
+paycoin.mint(becca_wallet, 50000*(10**18), {'from':paycoin_admin})
+paycoin.mint(citte_wallet, 50000*(10**18), {'from':paycoin_admin})
+paycoin.mint(pacio_wallet, 50000*(10**18), {'from':paycoin_admin})
+paycoin.mint(diana_wallet, 50000*(10**18), {'from':paycoin_admin})
+paycoin.mint(fra_wallet, 50000*(10**18), {'from':paycoin_admin})
 
 challenge = Challenge.deploy(paycoin.address, [becca_wallet, citte_wallet, pacio_wallet, diana_wallet, fra_wallet], {'from':paycoin_admin})
 
-totalChallengePaycoins = 3300000 *(10**paycoin.decimals()) #minimum is 3150000
+totalChallengePaycoins = 3300000 *(10**18) #minimum is 3150000
 paycoin.mint(challenge.address, totalChallengePaycoins, {'from':paycoin_admin})
 
 BotMinterData['bot_minter']['paycoin']=paycoin
