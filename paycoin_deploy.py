@@ -62,8 +62,12 @@ challenge = Challenge.deploy(paycoin.address, [becca_wallet, citte_wallet, pacio
 totalChallengePaycoins = 3300000 *(10**18) #minimum is 3150000
 paycoin.mint(challenge.address, totalChallengePaycoins, {'from':paycoin_admin})
 
-BotMinterData['bot_minter']['paycoin']=paycoin
-BotMinterData['bot_minter']['challenge']=challenge
+BotMinterData['bot_minter']['paycoin']=paycoin.address
+BotMinterData['bot_minter']['challenge']=challenge.address
+
+print(BotMinterData)
+
+# os.system('rm Bot_Minter_Data.json')
 
 with open('Bot_Minter_Data.json','w') as outfile:
     json.dump(BotMinterData,outfile)
