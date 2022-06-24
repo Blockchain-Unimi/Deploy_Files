@@ -4,7 +4,7 @@
 import json
 
 dizionario={}
-names=['Matteo','Diana']#,'Francesco','Riccardo','Cristiano']
+names=['Matteo','Diana','Francesco','Riccardo','Cristiano']
 botminterdata=json.loads(open('Bot_Minter_Data.json').read())
 
 for name in names:
