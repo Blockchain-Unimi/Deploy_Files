@@ -6,17 +6,16 @@ from brownie.network import accounts
 import os
 
 from brownie.network import connect, accounts
-from brownie import Contract, project, web3
+from brownie import Contract, project, web3, network
 import json
 import random
 import secrets
 import os
 from enum import Enum
-from telegram import Bot
 from termcolor import colored
 
 from tblib import ether
-from tblib import establish_connection, mint_paycoin_to_bots
+from tblib import establish_connection, mint_paycoin_to_bots, get_gas_price
 
 """
 Questo programma esegue il deploy di un token e di una pool e stampa due file json: un file privato `private_dict.json`
@@ -46,6 +45,10 @@ if __name__=='__main__':
     Connetto a ropsten e imposto il gas.
     """
     establish_connection('ropsten')
+    # gas_price=get_gas_price()
+
+    gas_price=web3.eth.gasPrice*2
+    network.gas_price(f'{gas_price} wei')
 
     """
     Carico i file .json dove sono scritte le proporzioni delle varie pool per tutti gli utenti. Carico inoltre il json con il
